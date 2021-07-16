@@ -9,5 +9,10 @@ public class Obstaculo : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.left * speed * Time.deltaTime);
+
+        if (transform.position.x < -12f)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

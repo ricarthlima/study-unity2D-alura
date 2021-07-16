@@ -56,6 +56,8 @@
     <Compile Include="Assets\Scripts\Aviao.cs" />
     <Compile Include="Assets\Scripts\Obstaculo.cs" />
     <Compile Include="Assets\Scripts\GeradorObstaculos.cs" />
+    <Compile Include="Assets\Scripts\Carousel.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
