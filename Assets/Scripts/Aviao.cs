@@ -17,6 +17,8 @@ public class Aviao : MonoBehaviour
         initialPos = transform.position;
     }
 
+
+
     private void Update()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -42,5 +44,13 @@ public class Aviao : MonoBehaviour
     {
         transform.position = initialPos;
         this.fisica.simulated = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Obstaculo"))
+        {
+            gameController.GetPoint();
+        }
     }
 }
