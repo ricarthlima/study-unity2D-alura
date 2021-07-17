@@ -53,11 +53,12 @@
     <UnityVersion>2020.3.10f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Aviao.cs" />
-    <Compile Include="Assets\Scripts\Obstaculo.cs" />
-    <Compile Include="Assets\Scripts\GeradorObstaculos.cs" />
-    <Compile Include="Assets\Scripts\Carousel.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\Carousel.cs" />
+    <Compile Include="Assets\Scripts\Aviao.cs" />
+    <Compile Include="Assets\Scripts\GeradorObstaculos.cs" />
+    <Compile Include="Assets\Scripts\Obstaculo.cs" />
+    <Compile Include="Assets\Scripts\Hand.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

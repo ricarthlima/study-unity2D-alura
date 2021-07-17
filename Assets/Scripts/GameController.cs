@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour
     public int points;
 
     public Text scoreText;
+    public Text recordText;
+    public GameObject hand;
 
     private AudioSource audioScore;
 
@@ -27,15 +29,22 @@ public class GameController : MonoBehaviour
     public void EndGame()
     {
         Time.timeScale = 0;
+        hand.SetActive(false);
         imageGameObject.SetActive(true);
+        recordText.text = PlayerPrefs.GetInt("SCORE").ToString();
+        recordText.gameObject.SetActive(true);
+        SavePoints();
     }
 
     public void ResetGame()
     {
         aviao.GetComponent<Aviao>().Reiniciar();
+        recordText.gameObject.SetActive(false);
         imageGameObject.SetActive(false);
         this.DestroyObstacles();
         points = 0;
+        hand.SetActive(true);
+        hand.GetComponent<Hand>().Hide();
         Time.timeScale = 1;
     }
 
@@ -52,5 +61,13 @@ public class GameController : MonoBehaviour
     {
         audioScore.Play();
         points++;
+    }
+
+    public void SavePoints()
+    {
+        if (points > PlayerPrefs.GetInt("SCORE"))
+        {
+            PlayerPrefs.SetInt("SCORE", points);
+        }
     }
 }
